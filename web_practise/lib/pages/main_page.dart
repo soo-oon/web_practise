@@ -10,32 +10,111 @@ class MainPage extends StatelessWidget {
     final double verticalPadding = size.height * 0.02;
 
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: horizontalPadding,
-              vertical: verticalPadding,
-            ),
-            child: const _Header(),
-          ),
-          Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: NetworkImage("https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile7.uf.tistory.com%2Fimage%2F24283C3858F778CA2EFABE")),
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(24.0),
+      body: SingleChildScrollView(
+        child: Container(
+          width: size.width,
+          height: 500,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/machine.jpg"),
+                      fit: BoxFit.cover),
+                ),
+                padding: EdgeInsets.symmetric(
+                  horizontal: horizontalPadding,
+                  vertical: verticalPadding,
                 ),
               ),
-              child: SizedBox(
-                width: 500.0,
-                height: 222.0,
-                child: Image.network(
-                  ,
-                  fit: BoxFit.cover,
+              Container(
+                color: Colors.black.withOpacity(0.6),
+              ),
+              Container(
+                alignment: Alignment.topCenter,
+                padding: EdgeInsets.symmetric(
+                  horizontal: horizontalPadding,
+                  vertical: verticalPadding,
                 ),
-              )),
-        ],
+                child: const _Header(),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: horizontalPadding, vertical: verticalPadding),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Text(
+                          "New Place 으으으",
+                          style: TextStyle(fontSize: 48.0, color: Colors.white),
+                        ),
+                      ),
+                      Expanded(
+                          flex: 1,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "더 많은 기회를 노린다.",
+                                style: TextStyle(
+                                    fontSize: 16.0, color: Colors.white),
+                              ),
+                              const SizedBox(height: 24.0),
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: Text("자세히 보기"),
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.black),
+                              )
+                            ],
+                          )),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.bottomCenter,
+                padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding, vertical: verticalPadding),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: const SizedBox(),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            color: Colors.white,
+                            size: 16.0,
+                          ),
+                          const SizedBox(
+                            width: 8.0,
+                          ),
+                          Text(
+                            "대구광역시 달서구 호림동",
+                            style:
+                                TextStyle(fontSize: 16.0, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -72,7 +151,7 @@ class _Header extends StatelessWidget {
               "Feature",
               style: TextStyle(
                   color: Utils.mainColor,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                   fontSize: 18.0),
             ),
             const SizedBox(width: 36.0),
@@ -80,7 +159,7 @@ class _Header extends StatelessWidget {
               "Services",
               style: TextStyle(
                   color: Utils.mainColor,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                   fontSize: 18.0),
             ),
             const SizedBox(width: 36.0),
@@ -90,7 +169,7 @@ class _Header extends StatelessWidget {
                 "Contact us",
                 style: TextStyle(
                     color: Color(0xff5574db),
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     fontSize: 14.0),
               ),
               style: ElevatedButton.styleFrom(
