@@ -134,6 +134,7 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -171,7 +172,9 @@ class _Header extends StatelessWidget {
             ),
             const SizedBox(width: 36.0),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                print(size.width);
+              },
               child: Text(
                 "Contact us",
                 style: TextStyle(
@@ -191,5 +194,19 @@ class _Header extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class _RegularVersion extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class _SmallVersion extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
