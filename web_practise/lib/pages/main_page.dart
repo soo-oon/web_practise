@@ -28,89 +28,96 @@ class MainPage extends StatelessWidget {
                   vertical: verticalPadding,
                 ),
               ),
-              Container(
-                color: Colors.black.withOpacity(0.6),
-              ),
-              Container(
-                alignment: Alignment.topCenter,
-                padding: EdgeInsets.symmetric(
-                  horizontal: horizontalPadding,
-                  vertical: verticalPadding,
-                ),
-                child: const _Header(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: horizontalPadding, vertical: verticalPadding),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: Text(
-                          "New Place 으으으",
-                          style: TextStyle(fontSize: 48.0, color: Colors.white),
-                        ),
-                      ),
-                      Expanded(
-                          flex: 1,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "더 많은 기회를 노린다.",
-                                style: TextStyle(
-                                    fontSize: 16.0, color: Colors.white),
-                              ),
-                              const SizedBox(height: 24.0),
-                              ElevatedButton(
-                                onPressed: () {},
-                                child: Text("자세히 보기"),
-                                style: ElevatedButton.styleFrom(
-                                    primary: Colors.black),
-                              )
-                            ],
-                          )),
-                    ],
+              Stack(
+                children: [
+                  Container(
+                    color: Colors.black.withOpacity(0.6),
                   ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.bottomCenter,
-                padding: EdgeInsets.symmetric(
-                    horizontal: horizontalPadding, vertical: verticalPadding),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: const SizedBox(),
+                  Container(
+                    alignment: Alignment.topCenter,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: horizontalPadding,
+                      vertical: verticalPadding,
                     ),
-                    Expanded(
-                      flex: 1,
+                    child: const _Header(),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                            Icons.location_on,
-                            color: Colors.white,
-                            size: 16.0,
+                          Expanded(
+                            flex: 1,
+                            child: Text(
+                              "New Place 으으으",
+                              style: TextStyle(
+                                  fontSize: 48.0, color: Colors.white),
+                            ),
                           ),
-                          const SizedBox(
-                            width: 8.0,
-                          ),
-                          Text(
-                            "대구광역시 달서구 호림동",
-                            style:
-                                TextStyle(fontSize: 16.0, color: Colors.white),
-                          ),
+                          Expanded(
+                              flex: 1,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "더 많은 기회를 노린다.",
+                                    style: TextStyle(
+                                        fontSize: 16.0, color: Colors.white),
+                                  ),
+                                  const SizedBox(height: 24.0),
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text("자세히 보기"),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.black),
+                                  )
+                                ],
+                              )),
                         ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.symmetric(
+                        horizontal: horizontalPadding,
+                        vertical: verticalPadding),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: const SizedBox(),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.location_on,
+                                color: Colors.white,
+                                size: 16.0,
+                              ),
+                              const SizedBox(
+                                width: 8.0,
+                              ),
+                              Text(
+                                "대구광역시 달서구 호림동",
+                                style: TextStyle(
+                                    fontSize: 16.0, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               )
             ],
           ),
