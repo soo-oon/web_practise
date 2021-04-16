@@ -111,6 +111,8 @@ class _RegularVersion extends StatelessWidget {
           ),
         ),
         Container(
+          width: 800,
+          alignment: Alignment.center,
           child: Stack(
             children: [
               Container(
