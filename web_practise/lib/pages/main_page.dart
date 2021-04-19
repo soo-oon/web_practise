@@ -18,76 +18,6 @@ class MainPage extends StatelessWidget {
   }
 }
 
-class _Header extends StatelessWidget {
-  const _Header({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          "New Place",
-          style: TextStyle(
-              color: Utils.mainColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 32.0),
-        ),
-        Row(
-          children: [
-            Text(
-              "Home",
-              style: TextStyle(
-                  color: Utils.mainColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0),
-            ),
-            const SizedBox(width: 36.0),
-            Text(
-              "Feature",
-              style: TextStyle(
-                  color: Utils.mainColor,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 18.0),
-            ),
-            const SizedBox(width: 36.0),
-            Text(
-              "Services",
-              style: TextStyle(
-                  color: Utils.mainColor,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 18.0),
-            ),
-            const SizedBox(width: 36.0),
-            ElevatedButton(
-              onPressed: () {
-                print(size.width);
-              },
-              child: Text(
-                "Contact us",
-                style: TextStyle(
-                    color: Color(0xff5574db),
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14.0),
-              ),
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 32.0, vertical: 18.0),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32.0)),
-                primary: Color(0xffeaeefb),
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
-
 class _RegularVersion extends StatelessWidget {
   const _RegularVersion();
   @override
@@ -121,7 +51,6 @@ class _RegularVersion extends StatelessWidget {
                 Container(
                   alignment: Alignment.topCenter,
                   padding: EdgeInsets.symmetric(
-                    horizontal: horizontalPadding,
                     vertical: verticalPadding,
                   ),
                   child: const _Header(),
@@ -211,5 +140,75 @@ class _SmallVersion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container();
+  }
+}
+
+class _Header extends StatelessWidget {
+  const _Header({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          "New Place",
+          style: TextStyle(
+              color: Utils.mainColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 32.0),
+        ),
+        Row(
+          children: [
+            Text(
+              "Home",
+              style: TextStyle(
+                  color: Utils.mainColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0),
+            ),
+            const SizedBox(width: 36.0),
+            Text(
+              "Feature",
+              style: TextStyle(
+                  color: Utils.mainColor,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18.0),
+            ),
+            const SizedBox(width: 36.0),
+            Text(
+              "Services",
+              style: TextStyle(
+                  color: Utils.mainColor,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18.0),
+            ),
+            const SizedBox(width: 36.0),
+            ElevatedButton(
+              onPressed: () {
+                print(size.width);
+              },
+              child: Text(
+                "Contact us",
+                style: TextStyle(
+                    color: Color(0xff5574db),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14.0),
+              ),
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 32.0, vertical: 18.0),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
+                primary: Color(0xffeaeefb),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
