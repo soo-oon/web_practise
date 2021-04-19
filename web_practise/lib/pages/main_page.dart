@@ -12,6 +12,7 @@ class MainPage extends StatelessWidget {
           width: size.width,
           height: 800,
           child: const _RegularVersion(),
+          // focus를 사용하는 것 말고 sliver 로 해보기
         ),
       ),
     );
